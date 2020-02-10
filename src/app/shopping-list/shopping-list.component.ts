@@ -8,12 +8,14 @@ import { Ingredient } from '../shared/ingredient.model';
 })
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[] = [
-    new Ingredient('Apples',5),
-    new Ingredient('Tomato',8)
-  ]
+    new Ingredient('Apples', 5),
+    new Ingredient('Tomato', 8)
+  ];
   constructor() { }
 
   ngOnInit() {
   }
-
+  onIngredientAdded(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+  }
 }
