@@ -4,8 +4,8 @@ import { EventEmitter, OnInit } from '@angular/core';
 export class ShoppingListService implements OnInit {
 ingredientsChanged = new EventEmitter<Ingredient[]>();
   ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomato', 8)
+    new Ingredient('Apples', 5 , ''),
+    new Ingredient('Tomato', 8, '')
   ];
 
   ngOnInit() {

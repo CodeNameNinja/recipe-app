@@ -10,14 +10,18 @@ import { ShoppingListService } from '../shopping-list.service';
 export class ShoppingEditComponent implements OnInit {
   @ViewChild('nameInput', { static: false }) nameInputRef: ElementRef;
   @ViewChild('amountInput', { static: false }) amountInputRef: ElementRef;
+  @ViewChild('measuringUnit', { static: false }) measuringUnit: ElementRef;
 
   constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit() {
   }
   onAddItem() {
-  const newIngredient = new Ingredient(this.nameInputRef.nativeElement.value, this.amountInputRef.nativeElement.value);
+   const nameInput = this.nameInputRef.nativeElement.value;
+   const amountInput = this.amountInputRef.nativeElement.value;
+   const measuringUnit = this.measuringUnit.nativeElement.value;
+   const newIngredient = new Ingredient(nameInput, amountInput, measuringUnit );
 
-  this.shoppingListService.addIngredient(newIngredient);
+   this.shoppingListService.addIngredient(newIngredient);
  }
 }
