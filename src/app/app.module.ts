@@ -29,7 +29,7 @@ import { RecipeService } from './recipes/recipe.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
